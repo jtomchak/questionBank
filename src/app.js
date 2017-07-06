@@ -1,20 +1,23 @@
-var express = require("express");
-var path = require("path");
-var favicon = require("serve-favicon");
-var logger = require("morgan");
-var cookieParser = require("cookie-parser");
-var bodyParser = require("body-parser");
+"use strict";
+import express from "express";
+import path from "path";
+import favicon from "serve-favicon";
+import logger from "morgan";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
 
-var index = require("./routes/index");
-var users = require("./routes/users");
-var questions = require("./routes/questions");
-
-var app = express();
+import index from "./routes/index";
+import users from "./routes/users";
+import questions from "./routes/questions";
+export const app = express();
 
 //TODO: put your mlabs db connection here
-mongoose.connect("<REMEMBER YOUR STRING IN THE BLOCKS>");
+mongoose.connect(
+  "mongodb://admin:jsfullstack@ds137220.mlab.com:37220/questionbank"
+);
 
-var db = mongoose.connection;
+let db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function() {
   // we're connected!
@@ -54,5 +57,3 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-module.exports = app;
