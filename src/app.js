@@ -13,9 +13,7 @@ import questions from "./routes/questions";
 export const app = express();
 
 //TODO: put your mlabs db connection here
-mongoose.connect(
-  "mongodb://admin:jsfullstack@ds137220.mlab.com:37220/questionbank"
-);
+mongoose.connect("<PUT YOUR DBURL HERE>");
 
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
