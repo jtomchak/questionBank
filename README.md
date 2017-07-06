@@ -10,9 +10,8 @@
 
 
 ##Making the question bank list
-1. on the questions page, rather than add question lets list the questions and author in order of most recent to oldests
-1. our template to add questions needs to be moved to 'questions/new'
-2. Limit list to 25
+1. on the questions page, rather than add question lets list the questions and author in order of most recent to oldests, Limit list to 25
+2. our template to add questions needs to be moved to 'questions/new'
 3. let's add a button to LINK to the 'questions/new' route, a sort of add question button
 4. Sweet! now on successful submit (add new question), we want to redirect and render the questions page with our list of questions, the one we just added should be at the top!
 5. Add some sweet style, bc marketing wants more padding!!!!
