@@ -11,9 +11,12 @@ import index from "./routes/index";
 import users from "./routes/users";
 import questions from "./routes/questions";
 export const app = express();
+app.locals.moment = require("moment");
 
 //TODO: put your mlabs db connection here
-mongoose.connect("<PUT YOUR DBURL HERE>");
+mongoose.connect(
+  "mongodb://admin:jsfullstack@ds137220.mlab.com:37220/questionbank"
+);
 
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
