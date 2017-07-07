@@ -1,3 +1,5 @@
 if questions
   each question in questions
     div #{question.question} #{moment(question.createdAt).format('MMMM Do YYYY, h:mm:ss a')}
+a(href="/questions/new")
+  button(type="button") create new question
