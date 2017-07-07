@@ -6,7 +6,8 @@ exports.newQuestion = function(req, res) {
 
 exports.submitQuestion = function(req, res) {
   var question = new Question({
-    question: req.body.question,
+    question:
+      req.body.question.charAt(0).toUpperCase() + string.slice(1).toLowerCase(),
     answer: req.body.answer,
     author: req.body.author
   });
