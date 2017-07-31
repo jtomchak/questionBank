@@ -10,7 +10,6 @@ import mongoose from "mongoose";
 import index from "./routes/index";
 import users from "./routes/users";
 import questions from "./routes/questions";
-import api from "./routes/api";
 export const app = express();
 app.locals.moment = require("moment");
 
@@ -41,7 +40,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", index);
 app.use("/users", users);
 app.use("/questions", questions);
-app.use("/api", api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
